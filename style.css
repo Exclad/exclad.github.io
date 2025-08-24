@@ -29,6 +29,16 @@ a:hover {
     color: #003d80;
 }
 
+ul {
+    list-style-position: outside;
+    padding-left: 20px;
+    text-align: left;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
 /* --- Navigation --- */
 nav {
     background-color: #ffffff;
@@ -143,7 +153,7 @@ footer {
     text-align: center;
 }
 
-/* --- Project Page Styles (NEW!) --- */
+/* --- Project Page Styles --- */
 .page-header {
     text-align: center;
     padding-bottom: 20px;
@@ -163,6 +173,7 @@ footer {
     margin-bottom: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-align: left;
 }
 
 .project-card:hover {
@@ -189,4 +200,211 @@ footer {
     margin-right: 8px;
     margin-bottom: 8px;
     font-weight: 600;
+}
+
+/* --- Generic Section Styles --- */
+.bordered-section {
+    padding: 60px 0;
+    border-top: 1px solid #e9ecef;
+    text-align: left;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+}
+
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.skill-card {
+    background-color: #ffffff;
+    padding: 25px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+}
+
+.skill-card i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #0056b3;
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0 0 0;
+}
+
+
+/* --- Experience Section --- */
+.experience-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.experience-timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #0056b3;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -8.5px;
+    background-color: white;
+    border: 3px solid #0056b3;
+    top: 28px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.right::after {
+    left: -8.5px;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.content h3 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+.content h4 {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #495057;
+    font-weight: 700;
+}
+
+.content .dates {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+/* --- Education & Certs Sections --- */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.info-card {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.info-card h3 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+.info-card p {
+    margin-bottom: 5px;
+}
+
+.info-card .award {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #6c757d;
+    margin-top: 10px;
+}
+
+/* --- Media Queries --- */
+@media screen and (max-width: 600px) {
+    .experience-timeline::after {
+        left: 20px;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 15px;
+    }
+    .timeline-item::before {
+        left: 45px;
+        border-color: transparent white transparent transparent;
+        border-width: 10px 10px 10px 0;
+    }
+    .left::after, .right::after {
+        left: 12.5px;
+    }
+    .right {
+        left: 0%;
+    }
 }
