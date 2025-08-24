@@ -334,6 +334,7 @@ footer {
     position: relative;
     border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    z-index: 2;
 }
 
 .content h3 {
@@ -407,4 +408,11 @@ footer {
     .right {
         left: 0%;
     }
+}
+
+.skill-card svg {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 15px;
+    fill: #0056b3;
 }
