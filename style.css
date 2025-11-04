@@ -202,6 +202,23 @@ footer {
     font-weight: 600;
 }
 
+/* NEW: Project group subheadings */
+.project-group-header {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #343a40;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 8px;
+}
+
+.project-group-header:first-of-type {
+    margin-top: 0;
+}
+
+
 /* --- Generic Section Styles --- */
 .bordered-section {
     padding: 60px 0;
@@ -252,109 +269,37 @@ footer {
 }
 
 
-/* --- Experience Section --- */
-.experience-timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
+/* --- Experience Section (NEW SIMPLE STYLE) --- */
+.experience-item {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: left;
 }
 
-.experience-timeline::after {
-    content: '';
-    position: absolute;
-    width: 3px;
-    background-color: #0056b3;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -1.5px;
-}
-
-.timeline-item {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-}
-
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    right: -8.5px;
-    background-color: white;
-    border: 3px solid #0056b3;
-    top: 28px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.left {
-    left: 0;
-}
-
-.right {
-    left: 50%;
-}
-
-.left::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    right: 30px;
-    border: medium solid white;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
-}
-
-.right::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    left: 30px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-}
-
-.right::after {
-    left: -8.5px;
-}
-
-.content {
-    padding: 20px 30px;
-    background-color: white;
-    position: relative;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    z-index: 2;
-}
-
-.content h3 {
+.experience-item h3 {
     margin-top: 0;
     color: #0056b3;
+    font-size: 1.4rem;
 }
 
-.content h4 {
+.experience-item h4 {
     margin: 5px 0;
     font-size: 1rem;
     color: #495057;
     font-weight: 700;
 }
 
-.content .dates {
+.experience-item .dates {
     font-style: italic;
     font-size: 0.9rem;
     color: #6c757d;
     margin-bottom: 15px;
 }
+
 
 /* --- Education & Certs Sections --- */
 .grid-layout {
@@ -388,28 +333,23 @@ footer {
 }
 
 /* --- Media Queries --- */
+/* The old timeline-specific media query is removed as it's no longer needed. */
+/* The grid and card layouts are naturally responsive. */
 @media screen and (max-width: 600px) {
-    .experience-timeline::after {
-        left: 20px;
+    .hero h1 {
+        font-size: 2.8rem;
     }
-    .timeline-item {
-        width: 100%;
-        padding-left: 60px;
-        padding-right: 15px;
+    .hero .tagline {
+        font-size: 1.2rem;
     }
-    .timeline-item::before {
-        left: 45px;
-        border-color: transparent white transparent transparent;
-        border-width: 10px 10px 10px 0;
-    }
-    .left::after, .right::after {
-        left: 12.5px;
-    }
-    .right {
-        left: 0%;
+    nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
     }
 }
 
+
+/* --- Style for embedded SVG icons --- */
 .skill-card svg {
     width: 3rem;
     height: 3rem;
