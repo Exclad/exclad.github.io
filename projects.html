@@ -32,6 +32,54 @@
         <h2 class="project-group-header">Data Visualization</h2>
 
         <div class="project-card">
+            <h3>Netflix Content Dashboard</h3>
+            <div class="project-tags">
+                <span>Tableau</span>
+                <span>Media Analytics</span>
+                <span>Dashboarding</span>
+            </div>
+            <p>
+                A comprehensive dashboard analyzing the Netflix content catalog. This visualization provides insights into content distribution by genre, release year trends, and rating demographics to understand the platform's content strategy.
+            </p>
+            
+            <div class="viz-wrapper">
+                <div class='tableauPlaceholder' id='viz1768492163163' style='position: relative'>
+                    <noscript><a href='#'><img alt='Main Dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;NetflixDashboard_17684911924960&#47;MainDashboard&#47;1_rss.png' style='border: none' /></a></noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                        <param name='embed_code_version' value='3' /> 
+                        <param name='site_root' value='' />
+                        <param name='name' value='NetflixDashboard_17684911924960&#47;MainDashboard' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;NetflixDashboard_17684911924960&#47;MainDashboard&#47;1.png' /> 
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                </div>                
+                <script type='text/javascript'>                    
+                    var divElement = document.getElementById('viz1768492163163');                    
+                    var vizElement = divElement.getElementsByTagName('object')[0];                    
+                    // Modified to use 100% width to fit the container
+                    vizElement.style.width='100%';
+                    vizElement.style.height='1527px'; // Keeps the original height                    
+                    var scriptElement = document.createElement('script');                    
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                </script>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#" class="secondary">View Details</a>
+            </div>
+        </div>
+
+        <div class="project-card">
             <h3>Amazon Shoe Sales Analysis Dashboard</h3>
             <div class="project-tags">
                 <span>Tableau</span>
@@ -40,10 +88,51 @@
                 <span>Text Mining</span>
             </div>
             <p>
-                An interactive Tableau dashboard analyzing Amazon shoe sales data. This visualization explores the most popular brands and models, and utilizes a text cloud to highlight key terms from customer reviews, offering insights into consumer preferences and market trends.
+                An interactive Tableau dashboard analyzing Amazon shoe sales data. This visualization explores the most popular brands and models, and utilizes a text cloud to highlight key terms from customer reviews.
             </p>
+            
+            <div class="viz-wrapper">
+                <div class='tableauPlaceholder' id='viz1768492215361' style='position: relative'>
+                    <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Am&#47;AmazonShoeSalesAnalysis&#47;MostPopularShoesandTextCloud&#47;1_rss.png' style='border: none' /></a></noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                        <param name='embed_code_version' value='3' /> 
+                        <param name='site_root' value='' />
+                        <param name='name' value='AmazonShoeSalesAnalysis&#47;MostPopularShoesandTextCloud' />
+                        <param name='tabs' value='yes' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Am&#47;AmazonShoeSalesAnalysis&#47;MostPopularShoesandTextCloud&#47;1.png' /> 
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object>
+                </div>                
+                <script type='text/javascript'>                    
+                    var divElement = document.getElementById('viz1768492215361');                    
+                    var vizElement = divElement.getElementsByTagName('object')[0];                    
+                    // Modified logic to ensure 100% width on all screens
+                    if ( divElement.offsetWidth > 800 ) { 
+                        vizElement.style.width='100%';
+                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                    } else if ( divElement.offsetWidth > 500 ) { 
+                        vizElement.style.width='100%';
+                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                    } else { 
+                        vizElement.style.width='100%';
+                        vizElement.style.minHeight='2200px';
+                        vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';
+                    }                    
+                    var scriptElement = document.createElement('script');                    
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                </script>
+            </div>
+
             <div class="cta-buttons">
-                <a href="https://public.tableau.com/views/AmazonShoeSalesAnalysis/MostPopularShoesandTextCloud?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="primary">View Dashboard</a>
+                <a href="https://public.tableau.com/views/AmazonShoeSalesAnalysis/MostPopularShoesandTextCloud?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="secondary">Open in Tableau Public</a>
             </div>
         </div>
         
@@ -58,7 +147,7 @@
                 <span>GitHub</span>
             </div>
             <p>
-                A collection of Python scripts to automate Tableau Server and Cloud administration tasks. Includes tools for user/group synchronization, PAT validation, and migrating subscriptions and permissions, significantly reducing manual administrative effort.
+                A collection of Python scripts to automate Tableau Server and Cloud administration tasks. Includes tools for user/group synchronization, PAT validation, and migrating subscriptions and permissions.
             </p>
             <div class="cta-buttons">
                 <a href="https://github.com/Exclad/Tableau-Python-Scripts" target="_blank" class="primary">View on GitHub</a>
@@ -74,7 +163,7 @@
                 <span>Automation</span>
             </div>
             <p>
-                A desktop application that uses Optical Character Recognition (OCR) to read text from images and automatically sort them into folders based on keywords (e.g., "good morning", "good night"). Built with Python and EasyOCR with GPU acceleration.
+                A desktop application that uses Optical Character Recognition (OCR) to read text from images and automatically sort them into folders based on keywords. Built with Python and EasyOCR with GPU acceleration.
             </p>
             <div class="cta-buttons">
                 <a href="https://github.com/Exclad/Good-Morning-Image-Sorter-GUI" target="_blank" class="primary">View on GitHub</a>

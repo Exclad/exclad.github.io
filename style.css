@@ -363,3 +363,14 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+/* --- Tableau Embed Styles --- */
+.viz-wrapper {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden; /* Clips the sharp corners of the Tableau iframe */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #fff;
+}
