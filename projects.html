@@ -65,17 +65,11 @@
                 <script type='text/javascript'>                    
                     var divElement = document.getElementById('viz1768492163163');                    
                     var vizElement = divElement.getElementsByTagName('object')[0];                    
-                    // Responsive logic applied (Same as Amazon)
-                    if ( divElement.offsetWidth > 800 ) { 
-                        vizElement.style.width='100%'; 
-                        vizElement.style.height=(divElement.offsetWidth*0.8)+'px'; // 0.8 aspect ratio
-                    } else if ( divElement.offsetWidth > 500 ) { 
-                        vizElement.style.width='100%'; 
-                        vizElement.style.height=(divElement.offsetWidth*0.8)+'px'; 
-                    } else { 
-                        vizElement.style.width='100%'; 
-                        vizElement.style.height='1600px'; // Mobile height
-                    }                    
+                    
+                    // FIX: Set width to 100% and let Tableau auto-calculate height
+                    vizElement.style.width='100%';
+                    // vizElement.style.height= ... (Removed explicit height calculation)
+
                     var scriptElement = document.createElement('script');                    
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);                
@@ -120,8 +114,12 @@
                 </div>                
                 <script type='text/javascript'>                    
                     var divElement = document.getElementById('viz1768492215361');                    
-                    var vizElement = divElement.getElementsByTagName('object')[0];                    
-                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='2200px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                    
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+
+                    // FIX: Set width to 100% and let Tableau auto-calculate height
+                    vizElement.style.width='100%';
+                    // vizElement.style.height= ... (Removed explicit height calculation)
+
                     var scriptElement = document.createElement('script');                    
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);                
