@@ -65,9 +65,17 @@
                 <script type='text/javascript'>                    
                     var divElement = document.getElementById('viz1768492163163');                    
                     var vizElement = divElement.getElementsByTagName('object')[0];                    
-                    // Modified to use 100% width to fit the container
-                    vizElement.style.width='100%';
-                    vizElement.style.height='1527px'; // Keeps the original height                    
+                    // Responsive logic applied (Same as Amazon)
+                    if ( divElement.offsetWidth > 800 ) { 
+                        vizElement.style.width='100%'; 
+                        vizElement.style.height=(divElement.offsetWidth*0.8)+'px'; // 0.8 aspect ratio
+                    } else if ( divElement.offsetWidth > 500 ) { 
+                        vizElement.style.width='100%'; 
+                        vizElement.style.height=(divElement.offsetWidth*0.8)+'px'; 
+                    } else { 
+                        vizElement.style.width='100%'; 
+                        vizElement.style.height='1600px'; // Mobile height
+                    }                    
                     var scriptElement = document.createElement('script');                    
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);                
@@ -75,7 +83,7 @@
             </div>
             
             <div class="cta-buttons">
-                <a href="#" class="secondary">View Details</a>
+                <a href="https://public.tableau.com/views/NetflixDashboard_17684911924960/MainDashboard" target="_blank" class="secondary">Open in Tableau Public</a>
             </div>
         </div>
 
@@ -113,18 +121,7 @@
                 <script type='text/javascript'>                    
                     var divElement = document.getElementById('viz1768492215361');                    
                     var vizElement = divElement.getElementsByTagName('object')[0];                    
-                    // Modified logic to ensure 100% width on all screens
-                    if ( divElement.offsetWidth > 800 ) { 
-                        vizElement.style.width='100%';
-                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-                    } else if ( divElement.offsetWidth > 500 ) { 
-                        vizElement.style.width='100%';
-                        vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-                    } else { 
-                        vizElement.style.width='100%';
-                        vizElement.style.minHeight='2200px';
-                        vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';
-                    }                    
+                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='2200px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                    
                     var scriptElement = document.createElement('script');                    
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);                
