@@ -370,7 +370,8 @@ footer {
     margin-bottom: 15px;
     border: 1px solid #e9ecef;
     border-radius: 8px;
-    overflow: hidden; /* Clips the sharp corners of the Tableau iframe */
+    overflow: hidden; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     background-color: #fff;
+    width: 100%; 
 }
