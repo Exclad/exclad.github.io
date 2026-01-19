@@ -42,45 +42,90 @@
                 A comprehensive dashboard analyzing the Netflix content catalog. This visualization provides insights into content distribution by genre, release year trends, and rating demographics to understand the platform's content strategy.
             </p>
             
-            <div class="viz-wrapper">
-                <div class='tableauPlaceholder' id='viz1768492163163' style='position: relative'>
-                    <noscript><a href='#'><img alt='Main Dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;NetflixDashboard_17684911924960&#47;MainDashboard&#47;1_rss.png' style='border: none' /></a></noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                        <param name='embed_code_version' value='3' /> 
-                        <param name='site_root' value='' />
-                        <param name='name' value='NetflixDashboard_17684911924960&#47;MainDashboard' />
-                        <param name='tabs' value='no' />
-                        <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;NetflixDashboard_17684911924960&#47;MainDashboard&#47;1.png' /> 
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='language' value='en-US' />
-                        <param name='filter' value='publish=yes' />
-                    </object>
-                </div>                
-                <script type='text/javascript'>                    
-                    var divElement = document.getElementById('viz1768492163163');                    
-                    var vizElement = divElement.getElementsByTagName('object')[0];                    
-                    // Fixed Zoom Logic for Netflix (Taller Aspect Ratio)
-                    if ( divElement.offsetWidth > 800 ) { 
-                        vizElement.style.width='100%'; 
-                        vizElement.style.height=(divElement.offsetWidth*1.4)+'px'; 
-                    } else if ( divElement.offsetWidth > 500 ) { 
-                        vizElement.style.width='100%'; 
-                        vizElement.style.height=(divElement.offsetWidth*1.4)+'px'; 
-                    } else { 
-                        vizElement.style.width='100%'; 
-                        vizElement.style.height='1400px'; 
-                    }                    
-                    var scriptElement = document.createElement('script');                    
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-                </script>
+            <style>
+                #netflix-container {
+                    position: relative;
+                    overflow: hidden; /* Hides the overflow when we force width to 1920px */
+                    width: 100%;
+                }
+                #viz1768492163163 {
+                    /* We set the transformation origin to top-left so it shrinks from the corner */
+                    transform-origin: 0 0;
+                    width: 1920px; /* Force it to render at full original dashboard size */
+                    height: 1527px; /* Original height + 27px for toolbar */
+                }
+            </style>
+
+            <div class="viz-wrapper" id="netflix-wrapper">
+                <div id="netflix-container">
+                    <div class='tableauPlaceholder' id='viz1768492163163' style='position: relative'>
+                        <noscript><a href='#'><img alt='Main Dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;NetflixDashboard_17684911924960&#47;MainDashboard&#47;1_rss.png' style='border: none' /></a></noscript>
+                        <object class='tableauViz' style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                            <param name='embed_code_version' value='3' /> 
+                            <param name='site_root' value='' />
+                            <param name='name' value='NetflixDashboard_17684911924960&#47;MainDashboard' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;NetflixDashboard_17684911924960&#47;MainDashboard&#47;1.png' /> 
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' />
+                            <param name='language' value='en-US' />
+                            <param name='filter' value='publish=yes' />
+                        </object>
+                    </div>
+                </div>
             </div>
+            
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1768492163163');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                
+                // 1. Force the Tableau Object to match the original Fixed Size (1920x1500)
+                vizElement.style.width = '1920px';
+                vizElement.style.height = '1527px'; // 1500px + toolbar space
+
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+                // 2. JavaScript Scaling Logic
+                function scaleNetflixDashboard() {
+                    var container = document.getElementById('netflix-container');
+                    var wrapper = document.getElementById('netflix-wrapper');
+                    var viz = document.getElementById('viz1768492163163');
+                    
+                    // Get the actual width of the container on the user's screen (e.g., 900px)
+                    var containerWidth = wrapper.offsetWidth;
+                    // The original width of your dashboard
+                    var originalWidth = 1920; 
+                    var originalHeight = 1527;
+
+                    // Calculate the ratio (e.g., 900 / 1920 = 0.46)
+                    var scale = containerWidth / originalWidth;
+
+                    // If the screen is wider than the dashboard, don't scale up (optional)
+                    if (scale > 1) scale = 1;
+
+                    // Apply the CSS Transform
+                    viz.style.transform = "scale(" + scale + ")";
+                    
+                    // IMPORTANT: Shrinking the element doesn't shrink the space it takes up.
+                    // We must manually adjust the container height to remove the empty white space.
+                    container.style.height = (originalHeight * scale) + "px";
+                    container.style.width = (originalWidth * scale) + "px";
+                }
+
+                // Run on load
+                window.onload = function() {
+                    scaleNetflixDashboard();
+                    // Also run if the user resizes their browser window
+                    window.addEventListener('resize', scaleNetflixDashboard);
+                };
+            </script>
             
             <div class="cta-buttons">
                 <a href="https://public.tableau.com/views/NetflixDashboard_17684911924960/MainDashboard" target="_blank" rel="noopener noreferrer" class="secondary">Open in Tableau Public</a>
