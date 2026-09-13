@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Vijay Kumar</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Vijay Kumar — Data Analyst and Data Engineer. Explore interactive dashboards, Python automation, and data engineering projects.">
+<meta name="theme-color" content="#10120f">
+<title>Projects | Vijay Kumar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="theme.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="site.js" defer>
+</script>
+<script type="module" src="dashboards.js"></script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<nav aria-label="Main navigation">
+<div class="nav-inner">
+<a class="brand" href="index.html" aria-label="Vijay Kumar home">vk<span>.</span>
+</a>
+<div class="nav-links">
+<a href="index.html" >Overview</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="index.html#about">About</a>
+<a href="certifications.html">Certifications</a>
+</div>
+<div class="nav-actions">
+<a class="nav-contact" href="https://www.linkedin.com/in/vijay-kumar-sg" target="_blank" rel="noopener noreferrer">Let’s connect <span>↗</span>
+</a>
+<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode" hidden>
+<svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+<svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg>
+</button>
+</div>
+</div>
+</nav>
+<main id="main">
+<header class="wrap project-hero">
+<p class="eyebrow">THE PORTFOLIO / ANALYTICS + ENGINEERING</p>
+<h1>Less guesswork.<br>
+<em>More possibility.</em>
+</h1>
+<p>Interactive dashboards, useful automations, and the systems that connect them.<br>A selection of things I’ve built to make data work harder.</p>
+<div class="actions">
+<a class="button" href="#dashboards">Explore dashboards ↓</a>
+<a class="text-link" href="#github">Browse GitHub projects ↓</a>
+</div>
+</header>
+<section class="wrap section dashboard-section" id="dashboards">        <div class="section-heading">
+<div>
+<p class="eyebrow">01 / INTERACTIVE ANALYTICS</p>
+<h2>Go beyond the screenshot.</h2>
+<p>Explore the live reports below. For a closer look on mobile, open the full report.</p>
+</div>
+</div>
 
-    <nav>
-        <div class="nav-container">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="https://www.linkedin.com/in/vijay-kumar-sg" target="_blank" rel="noopener noreferrer">Contact</a>
-        </div>
-    </nav>
-
-    <div class="container">
-        <header class="page-header">
-            <h1>My Projects</h1>
-            <p class="tagline">A selection of my professional, personal, and academic work.</p>
-        </header>
-
-        <h2 class="project-group-header">Data Visualization</h2>
-
-        <div class="project-card">
+        <div class="project-card" id="used-cars">
             <h3>Used Car Analytics Dashboard</h3>
             <div class="project-tags">
                 <span>Looker Studio</span>
@@ -41,14 +67,16 @@
                 A strategic Looker Studio dashboard that transforms raw listings into actionable pricing insights, identifying regional arbitrage opportunities and feature-based premiums for inventory optimization.
             </p>
 
-            <div style="position: relative; width: 100%; padding-bottom: 75%; height: 0; overflow: hidden; border: 1px solid #e9ecef; border-radius: 8px;">
-                <iframe 
-                    src="https://lookerstudio.google.com/embed/reporting/8448980d-709f-4795-8a52-243ce0ca5d1d/page/p_68gkjqh2zd" 
-                    frameborder="0" 
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                    allowfullscreen 
-                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-                </iframe>
+            <div class="looker-stage">
+                <iframe id="looker-report" tabindex="-1" title="Used car analytics interactive report" data-src="https://datastudio.google.com/embed/reporting/8448980d-709f-4795-8a52-243ce0ca5d1d/page/p_68gkjqh2zd" allowfullscreen
+                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" hidden></iframe>
+                <div class="looker-cover">
+                    <p class="eyebrow">LOOKER STUDIO / INTERACTIVE REPORT</p>
+                    <h3>Used car market insights.</h3>
+                    <p>Explore inventory, pricing tiers, and regional differences.</p>
+                    <button class="button" id="load-looker" hidden>Load interactive report ↗</button>
+                    <p class="embed-help" id="looker-status" role="status">Open the report here or use the full-report link below.</p>
+                </div>
             </div>
 
             <div class="cta-buttons">
@@ -56,7 +84,7 @@
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" id="netflix">
             <h3>Netflix Content Dashboard</h3>
             <div class="project-tags">
                 <span>Tableau</span>
@@ -66,100 +94,26 @@
             <p>
                 A comprehensive dashboard analyzing the Netflix content catalog. This visualization provides insights into content distribution by genre, release year trends, and rating demographics to understand the platform's content strategy.
             </p>
-            
-            <style>
-                #netflix-container {
-                    position: relative;
-                    overflow: hidden; /* Hides the overflow when we force width to 1920px */
-                    width: 100%;
-                }
-                #viz1768492163163 {
-                    /* We set the transformation origin to top-left so it shrinks from the corner */
-                    transform-origin: 0 0;
-                    width: 1920px; /* Force it to render at full original dashboard size */
-                    height: 1527px; /* Original height + 27px for toolbar */
-                }
-            </style>
 
-            <div class="viz-wrapper" id="netflix-wrapper">
+            <div class="viz-wrapper tableau-stage" id="netflix-wrapper" data-tableau="netflix" data-src="https://public.tableau.com/views/NetflixDashboard_17684911924960/MainDashboard">
                 <div id="netflix-container">
-                    <div class='tableauPlaceholder' id='viz1768492163163' style='position: relative'>
-                        <noscript><a href='#'><img alt='Main Dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;NetflixDashboard_17684911924960&#47;MainDashboard&#47;1_rss.png' style='border: none' /></a></noscript>
-                        <object class='tableauViz' style='display:none;'>
-                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                            <param name='embed_code_version' value='3' /> 
-                            <param name='site_root' value='' />
-                            <param name='name' value='NetflixDashboard_17684911924960&#47;MainDashboard' />
-                            <param name='tabs' value='no' />
-                            <param name='toolbar' value='yes' />
-                            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ne&#47;NetflixDashboard_17684911924960&#47;MainDashboard&#47;1.png' /> 
-                            <param name='animate_transition' value='yes' />
-                            <param name='display_static_image' value='yes' />
-                            <param name='display_spinner' value='yes' />
-                            <param name='display_overlay' value='yes' />
-                            <param name='display_count' value='yes' />
-                            <param name='language' value='en-US' />
-                            <param name='filter' value='publish=yes' />
-                        </object>
-                    </div>
+                    <div class="viz-live" inert id="netflix-viz"></div>
                 </div>
+                <a class="viz-preview" href="https://public.tableau.com/views/NetflixDashboard_17684911924960/MainDashboard" target="_blank" rel="noopener noreferrer">
+                    <img src="https://public.tableau.com/static/images/Ne/NetflixDashboard_17684911924960/MainDashboard/1.png" alt="Netflix dashboard preview — open the full interactive report" loading="lazy">
+                    <span>Dashboard preview · Open full report ↗</span>
+                </a>
             </div>
-            
-            <script type='text/javascript'>
-                var divElement = document.getElementById('viz1768492163163');
-                var vizElement = divElement.getElementsByTagName('object')[0];
-                
-                // 1. Force the Tableau Object to match the original Fixed Size (1920x1500)
-                vizElement.style.width = '1920px';
-                vizElement.style.height = '1527px'; // 1500px + toolbar space
+            <p class="embed-help" data-status="netflix" role="status">Interactive dashboard loads as you approach. You can also open the full report below.</p>
 
-                var scriptElement = document.createElement('script');
-                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                vizElement.parentNode.insertBefore(scriptElement, vizElement);
-
-                // 2. JavaScript Scaling Logic
-                function scaleNetflixDashboard() {
-                    var container = document.getElementById('netflix-container');
-                    var wrapper = document.getElementById('netflix-wrapper');
-                    var viz = document.getElementById('viz1768492163163');
-                    
-                    // Get the actual width of the container on the user's screen (e.g., 900px)
-                    var containerWidth = wrapper.offsetWidth;
-                    // The original width of your dashboard
-                    var originalWidth = 1920; 
-                    var originalHeight = 1527;
-
-                    // Calculate the ratio (e.g., 900 / 1920 = 0.46)
-                    var scale = containerWidth / originalWidth;
-
-                    // If the screen is wider than the dashboard, don't scale up (optional)
-                    if (scale > 1) scale = 1;
-
-                    // Apply the CSS Transform
-                    viz.style.transform = "scale(" + scale + ")";
-                    
-                    // IMPORTANT: Shrinking the element doesn't shrink the space it takes up.
-                    // We must manually adjust the container height to remove the empty white space.
-                    container.style.height = (originalHeight * scale) + "px";
-                    container.style.width = (originalWidth * scale) + "px";
-                }
-
-                // Run on load
-                window.onload = function() {
-                    scaleNetflixDashboard();
-                    // Also run if the user resizes their browser window
-                    window.addEventListener('resize', scaleNetflixDashboard);
-                };
-            </script>
-            
             <div class="cta-buttons">
                 <a href="https://public.tableau.com/views/NetflixDashboard_17684911924960/MainDashboard" target="_blank" rel="noopener noreferrer" class="primary">
-                    Open in Tableau Public (Recommended) <i class="fas fa-external-link-alt" style="margin-left: 5px;"></i>
+                    Open full dashboard ↗
                 </a>
             </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" id="amazon">
             <h3>Amazon Shoe Sales Analysis Dashboard</h3>
             <div class="project-tags">
                 <span>Tableau</span>
@@ -170,133 +124,177 @@
             <p>
                 An interactive Tableau dashboard analyzing Amazon shoe sales data. This visualization explores the most popular brands and models, and utilizes a text cloud to highlight key terms from customer reviews.
             </p>
-            
-            <div class="viz-wrapper">
-                <div class='tableauPlaceholder' id='viz1768492215361' style='position: relative'>
-                    <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Am&#47;AmazonShoeSalesAnalysis&#47;MostPopularShoesandTextCloud&#47;1_rss.png' style='border: none' /></a></noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                        <param name='embed_code_version' value='3' /> 
-                        <param name='site_root' value='' />
-                        <param name='name' value='AmazonShoeSalesAnalysis&#47;MostPopularShoesandTextCloud' />
-                        <param name='tabs' value='yes' />
-                        <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Am&#47;AmazonShoeSalesAnalysis&#47;MostPopularShoesandTextCloud&#47;1.png' /> 
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='language' value='en-US' />
-                    </object>
-                </div>                
-                <script type='text/javascript'>                    
-                    var divElement = document.getElementById('viz1768492215361');                    
-                    var vizElement = divElement.getElementsByTagName('object')[0];                    
-                    // Fixed Zoom Logic for Amazon
-                    if ( divElement.offsetWidth > 800 ) { 
-                        vizElement.style.width='100%'; 
-                        vizElement.style.height=(divElement.offsetWidth*0.8)+'px'; 
-                    } else if ( divElement.offsetWidth > 500 ) { 
-                        vizElement.style.width='100%'; 
-                        vizElement.style.height=(divElement.offsetWidth*0.8)+'px'; 
-                    } else { 
-                        vizElement.style.width='100%'; 
-                        vizElement.style.minHeight='2200px'; 
-                        vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px'; 
-                    }                    
-                    var scriptElement = document.createElement('script');                    
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-                </script>
+
+            <div class="viz-wrapper tableau-stage amazon-frame" data-tableau="amazon" data-src="https://public.tableau.com/views/AmazonShoeSalesAnalysis/MostPopularShoesandTextCloud">
+                <div class="viz-live" inert></div>
+                <a class="viz-preview" href="https://public.tableau.com/views/AmazonShoeSalesAnalysis/MostPopularShoesandTextCloud" target="_blank" rel="noopener noreferrer">
+                    <img src="https://public.tableau.com/static/images/Am/AmazonShoeSalesAnalysis/MostPopularShoesandTextCloud/1.png" alt="Amazon shoe sales dashboard preview — open the full interactive report" loading="lazy">
+                    <span>Dashboard preview · Open full report ↗</span>
+                </a>
             </div>
+            <p class="embed-help" data-status="amazon" role="status">Interactive dashboard loads as you approach. You can also open the full report below.</p>
 
             <div class="cta-buttons">
                 <a href="https://public.tableau.com/views/AmazonShoeSalesAnalysis/MostPopularShoesandTextCloud?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener noreferrer" class="secondary">Open in Tableau Public</a>
             </div>
         </div>
-        
-        <h2 class="project-group-header">Automation & Technical Projects</h2>
 
-        <div class="project-card">
-            <h3>Tableau Python Scripts</h3>
-            <div class="project-tags">
-                <span>Python</span>
-                <span>Tableau REST API</span>
-                <span>Automation</span>
-                <span>GitHub</span>
-            </div>
-            <p>
-                A collection of Python scripts to automate Tableau Server and Cloud administration tasks. Includes tools for user/group synchronization, PAT validation, and migrating subscriptions and permissions, significantly reducing manual administrative effort.
-            </p>
-            <div class="cta-buttons">
-                <a href="https://github.com/Exclad/Tableau-Python-Scripts" target="_blank" rel="noopener noreferrer" class="primary">View on GitHub</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <h3>Good Morning Image Sorter GUI</h3>
-            <div class="project-tags">
-                <span>Python</span>
-                <span>EasyOCR</span>
-                <span>GUI</span>
-                <span>Automation</span>
-            </div>
-            <p>
-                A desktop application that uses Optical Character Recognition (OCR) to read text from images and automatically sort them into folders based on keywords (e.g., "good morning", "good night"). Built with Python and EasyOCR with GPU acceleration.
-            </p>
-            <div class="cta-buttons">
-                <a href="https://github.com/Exclad/Good-Morning-Image-Sorter-GUI" target="_blank" rel="noopener noreferrer" class="primary">View on GitHub</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <h3>Homelab & DevOps Repository</h3>
-            <div class="project-tags">
-                <span>Docker</span>
-                <span>Docker-Compose</span>
-                <span>DevOps</span>
-                <span>Homelab</span>
-            </div>
-            <p>
-                A repository containing Docker Compose files and configurations for my personal homelab setup. This project demonstrates my skills in containerization, network configuration, and managing self-hosted services.
-            </p>
-            <div class="cta-buttons">
-                <a href="https://github.com/Exclad/homelab" target="_blank" rel="noopener noreferrer" class="primary">View on GitHub</a>
-            </div>
-        </div>
-
-        <h2 class="project-group-header">Academic Projects</h2>
-
-        <div class="project-card">
-            <h3>Supermarket Data Analytics</h3>
-            <div class="project-tags">
-                <span>R</span>
-                <span>Forecasting</span>
-                <span>Team Project</span>
-                <span>Academic</span>
-            </div>
-            <p>
-                As part of a five-person team at SIM Global Education, we developed a system to analyze and predict customer purchasing patterns in a supermarket. My contributions focused on leveraging R for extensive revenue and demand forecasting.
-            </p>
-        </div>
-        
-        <div class="project-card">
-            <h3>Eye-Tracking for Shopper's Behavioral Analytics</h3>
-            <div class="project-tags">
-                <span>Behavioral Analytics</span>
-                <span>Heat Maps</span>
-                <span>Academic</span>
-            </div>
-            <p>
-                A project at Nanyang Polytechnic where we captured and tracked shoppers' eye movements to optimize product placement. We generated heat maps from eye gaze data to analyze human attention and provide data-driven recommendations for increasing sales conversions.
-            </p>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Vijay Kumar. Built with HTML & CSS.</p>
-    </footer>
-
+</section>
+<section class="github-band" id="github">
+<div class="wrap section">
+<div class="section-heading">
+<div>
+<p class="eyebrow">02 / OPEN SOURCE & SIDE PROJECTS</p>
+<h2>Built out of curiosity.<br>
+<em>Made to be useful.</em>
+</h2>
+</div>
+<a class="text-link" href="https://github.com/Exclad?tab=repositories" target="_blank" rel="noopener noreferrer">All GitHub repositories ↗</a>
+</div>
+<div class="filter-row">
+<div class="filters" aria-label="Filter projects">
+<button data-filter="all" aria-pressed="true">All projects</button>
+<button data-filter="analysis" aria-pressed="false">Analysis</button>
+<button data-filter="engineering" aria-pressed="false">Engineering</button>
+<button data-filter="automation" aria-pressed="false">Automation</button>
+</div>
+<span id="project-count" aria-live="polite">6 projects</span>
+</div>
+<div class="repo-grid">
+<article class="repo-card" data-category="engineering">
+<div class="card-top">
+<span class="eyebrow">Data engineering</span>
+<span class="project-number">/01</span>
+</div>
+<h3>
+<a href="https://github.com/Exclad/StrengthSync" target="_blank" rel="noopener noreferrer">StrengthSync <span>↗</span>
+</a>
+</h3>
+<p class="project-hook">Merge two sources. Get the full picture.</p>
+<p>Combines Garmin biometrics and Hevy workout logs into enhanced FIT files, with timestamp matching, exercise mappings, and batch exports.</p>
+<div class="repo-bottom">
+<span>Python · SQLite · Docker</span>
+<a href="https://github.com/Exclad/StrengthSync" target="_blank" rel="noopener noreferrer" aria-label="View StrengthSync source">View source ↗</a>
+</div>
+</article>
+<article class="repo-card" data-category="engineering">
+<div class="card-top">
+<span class="eyebrow">BI automation</span>
+<span class="project-number">/02</span>
+</div>
+<h3>
+<a href="https://github.com/Exclad/Tableau-Python-Scripts" target="_blank" rel="noopener noreferrer">Tableau Python Scripts <span>↗</span>
+</a>
+</h3>
+<p class="project-hook">Less admin. More analysis.</p>
+<p>Python scripts that simplify Tableau administration through its API. Practical automation for the operational side of business intelligence.</p>
+<div class="repo-bottom">
+<span>Python · Tableau API</span>
+<a href="https://github.com/Exclad/Tableau-Python-Scripts" target="_blank" rel="noopener noreferrer" aria-label="View Tableau-Python-Scripts source">View source ↗</a>
+</div>
+</article>
+<article class="repo-card" data-category="analysis">
+<div class="card-top">
+<span class="eyebrow">Data analysis</span>
+<span class="project-number">/03</span>
+</div>
+<h3>
+<a href="https://github.com/Exclad/oanda-trade-visualizer" target="_blank" rel="noopener noreferrer">oanda trade visualizer <span>↗</span>
+</a>
+</h3>
+<p class="project-hook">From trade history to a clearer view.</p>
+<p>A Streamlit application to fetch, analyze, and visualize Oanda trading history, turning account activity into an interactive dashboard.</p>
+<div class="repo-bottom">
+<span>Python · Streamlit · Oanda API</span>
+<a href="https://github.com/Exclad/oanda-trade-visualizer" target="_blank" rel="noopener noreferrer" aria-label="View oanda-trade-visualizer source">View source ↗</a>
+</div>
+</article>
+<article class="repo-card" data-category="automation">
+<div class="card-top">
+<span class="eyebrow">Automation</span>
+<span class="project-number">/04</span>
+</div>
+<h3>
+<a href="https://github.com/Exclad/messi-notify" target="_blank" rel="noopener noreferrer">messi notify <span>↗</span>
+</a>
+</h3>
+<p class="project-hook">A collector’s eye, automated.</p>
+<p>Tracks signed-shirt listings with a Chrome price vault, NAS-hosted Telegram alerts, and public listing history tools.</p>
+<div class="repo-bottom">
+<span>Python · Telegram · Chrome</span>
+<a href="https://github.com/Exclad/messi-notify" target="_blank" rel="noopener noreferrer" aria-label="View messi-notify source">View source ↗</a>
+</div>
+</article>
+<article class="repo-card" data-category="automation">
+<div class="card-top">
+<span class="eyebrow">Automation</span>
+<span class="project-number">/05</span>
+</div>
+<h3>
+<a href="https://github.com/Exclad/Good-Morning-Image-Sorter-GUI" target="_blank" rel="noopener noreferrer">Good Morning Image Sorter GUI <span>↗</span>
+</a>
+</h3>
+<p class="project-hook">Bring order to an image library.</p>
+<p>A desktop tool that reads image text with OCR and sorts files by keywords, with GPU acceleration.</p>
+<div class="repo-bottom">
+<span>Python · EasyOCR · GUI</span>
+<a href="https://github.com/Exclad/Good-Morning-Image-Sorter-GUI" target="_blank" rel="noopener noreferrer" aria-label="View Good-Morning-Image-Sorter-GUI source">View source ↗</a>
+</div>
+</article>
+<article class="repo-card" data-category="engineering">
+<div class="card-top">
+<span class="eyebrow">Infrastructure</span>
+<span class="project-number">/06</span>
+</div>
+<h3>
+<a href="https://github.com/Exclad/homelab" target="_blank" rel="noopener noreferrer">homelab <span>↗</span>
+</a>
+</h3>
+<p class="project-hook">The infrastructure behind the experiments.</p>
+<p>Dockerfiles and configurations for a personal homelab, supporting self-hosted services and hands-on infrastructure work.</p>
+<div class="repo-bottom">
+<span>Docker · Self-hosting</span>
+<a href="https://github.com/Exclad/homelab" target="_blank" rel="noopener noreferrer" aria-label="View homelab source">View source ↗</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="wrap section">
+<p class="eyebrow">03 / EARLY EXPLORATIONS</p>
+<h2>Where it started.</h2>
+<div class="repo-grid">
+<article class="repo-card">
+<p class="eyebrow">ACADEMIC / R · FORECASTING</p>
+<h3>Supermarket Data Analytics</h3>
+<p>Part of a five-person team at SIM Global Education analyzing customer purchasing patterns. My focus: revenue and demand forecasting in R.</p>
+</article>
+<article class="repo-card">
+<p class="eyebrow">ACADEMIC / BEHAVIORAL ANALYTICS</p>
+<h3>Eye-Tracking for Shopper Analytics</h3>
+<p>Captured shopper eye movements at Nanyang Polytechnic and generated attention heat maps to inform product placement recommendations.</p>
+</article>
+</div>
+</section>
+</main>
+<section class="contact wrap" id="contact">
+<p class="eyebrow">THE NEXT GOOD CONVERSATION</p>
+<h2>Let’s make data<br>
+<em>do something.</em>
+</h2>
+<div>
+<p>Have a data challenge, an interesting opportunity,<br>or just want to compare notes?</p>
+<a class="button" href="https://www.linkedin.com/in/vijay-kumar-sg" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+</div>
+</section>
+<footer class="wrap">
+<a class="brand" href="index.html">vk<span>.</span>
+</a>
+<span>© 2026 Vijay Kumar</span>
+<div>
+<a href="https://github.com/Exclad" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+<a href="https://www.linkedin.com/in/vijay-kumar-sg" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+</div>
+</footer>
 </body>
 </html>
